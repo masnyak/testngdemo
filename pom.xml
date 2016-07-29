@@ -27,7 +27,7 @@
                             <suiteXmlFile>suites/${suite}</suiteXmlFile>
                         </suiteXmlFiles>
                         <systemPropertyVariables>
-                            <!--<workingDirectory>target/surefire-reports/html/</workingDirectory>-->
+                            <workingDirectory>target/surefire-reports/html/</workingDirectory>
                             <org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
                         </systemPropertyVariables>
                         <properties>
@@ -37,12 +37,12 @@
                             </property>
                             <property>
                                 <name>listener</name>
-                                <value>org.uncommons.reportng.HTMLReporter,com.framework.testng.SuiteListener</value>
+                                <value>com.framework.testng.HTMLReporter,com.framework.testng.SuiteListener</value>
                             </property>
-                            <!--<property>-->
-                                <!--<name>outputDir</name>-->
-                                <!--<value>target/surefire-reports/html</value>-->
-                            <!--</property>-->
+                            <property>
+                                <name>outputDir</name>
+                                <value>target/surefire-reports/html</value>
+                            </property>
                         </properties>
                     </configuration>
                 </plugin>

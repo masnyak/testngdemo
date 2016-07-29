@@ -33,10 +33,19 @@ public class SuiteListener implements ISuiteListener, ITestListener, IConfigurat
     @Override
     public void onFinish(ITestContext context) {
         Iterator<ITestResult> listOfFailedTests = context.getFailedTests().getAllResults().iterator();
+        int errors = 0;
+        while (listOfFailedTests.hasNext()) {
+            ITestResult failedTest = listOfFailedTests.next();
+            if (!(failedTest.getThrowable() instanceof AssertionError)) {
+                errors++;
+            }
+        }
+        context.setAttribute("errors", errors);
     }
 
     @Override
     public void onStart(ISuite suite) {
+        suite.setAttribute("timestamp", System.currentTimeMillis());
     }
 
     @Override
