@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="0 Elevated tests" time-out="3000000" thread-count="1" parallel="tests">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="com.framework.testng.SuiteListener"/>
+    </listeners>
+    <test name="Test1">
+        <classes>
+            <class name="com.tests.Test1"/>
+        </classes>
+    </test>
+</suite>
